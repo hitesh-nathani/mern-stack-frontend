@@ -29,15 +29,24 @@ function UsersFromRtk() {
 
     content = (
       <div style={{ gap: "1rem", display: "flex", flexDirection: "column" }}>
-        <table style={{ backgroundColor: "white", color: "black" }}>
-          <thead>
+        <table>
+          <thead
+            style={{
+              backgroundColor: "white",
+              margin: "20px 0px",
+              color: "black",
+            }}
+          >
             <tr>
               <th>UserName</th>
+              <th>Email</th>
               <th>Roles</th>
               <th>Edit</th>
             </tr>
           </thead>
-          <tbody>{tableContent}</tbody>
+          <tbody style={{ backgroundColor: "white", color: "black" }}>
+            {tableContent}
+          </tbody>
         </table>
       </div>
     );
