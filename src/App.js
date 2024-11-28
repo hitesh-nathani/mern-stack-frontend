@@ -7,6 +7,10 @@ import DashLayout from "./components/DashLayout";
 // import UserList from "./pages/User/UserList";
 import NoteList from "./pages/Note/NoteList";
 import UsersFromRtk from "./pages/User/UsersFromRtk";
+import NewUserForm from "./pages/User/NewUserForm";
+import EditUser from "./pages/User/EditUser";
+import NewNote from "./pages/Note/NewNote";
+import EditNote from "./pages/Note/EditNote";
 
 function App() {
   return (
@@ -18,10 +22,14 @@ function App() {
           <Route path="users">
             {/* <Route index element={<UserList />} /> */}
             <Route index element={<UsersFromRtk />} />
+            <Route path="new" element={<NewUserForm />} />
+            <Route path=":id" element={<EditUser />} />
           </Route>
 
           <Route path="notes">
             <Route index element={<NoteList />} />
+            <Route path="new" element={<NewNote />} />
+            <Route path=":id" element={<EditNote />} />
           </Route>
         </Route>
       </Route>

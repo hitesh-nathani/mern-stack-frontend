@@ -11,7 +11,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: () => "/userlist", // Assuming a base URL is set in apiSlice
       validateStatus: (response, result) =>
         response.status === 200 && !result?.isError,
-      keepUnusedDataFor: 5,
       transformResponse: (responseData) => {
         console.log("🚀 ~ responseData:", responseData);
         const loadedUsers = responseData.map((user, index) => {

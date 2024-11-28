@@ -17,6 +17,14 @@ function User({ userId }) {
         <td>{user?.name}</td>
         <td>{user?.email}</td>
         <td>{userRolesString}</td>
+        <td>
+          <button
+            className="icon-button table__cell--edit"
+            onClick={handleEdit}
+          >
+            Edit{" "}
+          </button>
+        </td>
       </tr>
     );
   } else return null;
