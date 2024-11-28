@@ -21,16 +21,18 @@ function UsersFromRtk() {
       : null;
 
     content = (
-      <table>
-        <thead>
-          <tr>
-            <th>UserName</th>
-            <th>Roles</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-        <tbody>{tableContent}</tbody>
-      </table>
+      <div style={{ gap: "1rem", display: "flex", flexDirection: "column" }}>
+        <table style={{ backgroundColor: "white", color: "black" }}>
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Roles</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>{tableContent}</tbody>
+        </table>
+      </div>
     );
   }
 

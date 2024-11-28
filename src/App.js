@@ -4,8 +4,9 @@ import Layout from "./components/Layout";
 import Public from "./components/Public";
 import Login from "./components/Login";
 import DashLayout from "./components/DashLayout";
-import UserList from "./pages/User/UserList";
+// import UserList from "./pages/User/UserList";
 import NoteList from "./pages/Note/NoteList";
+import UsersFromRtk from "./pages/User/UsersFromRtk";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="dash" element={<DashLayout />}>
           <Route path="users">
-            <Route index element={<UserList />} />
+            {/* <Route index element={<UserList />} /> */}
+            <Route index element={<UsersFromRtk />} />
           </Route>
 
           <Route path="notes">
