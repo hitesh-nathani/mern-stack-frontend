@@ -4,7 +4,7 @@ import { ROLES } from "../../config/roles";
 import { useNavigate } from "react-router-dom";
 
 function NewUserForm() {
-  const USER_REGEX = /^[A-a]{3,20}$/;
+  const USER_REGEX = /^[A-z]{3,20}$/;
   const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/;
 
   const [addNewUser, { isLoading, isSuccess, isError, error }] =
@@ -45,7 +45,15 @@ function NewUserForm() {
     setRoles(values);
   };
 
-  const canSave = [roles.length,validUserName,validPassword].every(Boolean) && !isLoading;
+  const canSave =
+    [roles.length, validUserName, validPassword].every(Boolean) && !isLoading;
+  console.log(
+    "🚀 ~ NewUserForm ~ canSave:",
+    roles.length,
+    validUserName,
+    validPassword,
+    canSave
+  );
 
   const onSaveUserCliked = async (e) => {
     e.preventDefault();
@@ -68,7 +76,16 @@ function NewUserForm() {
   const validRolesClass = roles?.length ? "" : "form__input--incomplete";
 
   const content = (
-    <form className="form" onSubmit={onSaveUserCliked}>
+    <form
+      className="form"
+      onSubmit={onSaveUserCliked}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        maxWidth: "500px",
+        alignItems: "flex-start",
+      }}
+    >
       <div className="form__title-row">
         <h2>New User</h2>
         <div className={errClass}>{error?.data?.message}</div>
@@ -107,7 +124,7 @@ function NewUserForm() {
         multiple={true}
         size="3"
         value={roles}
-        onChange={onRolesChanged}    
+        onChange={onRolesChanged}
       >
         {options}
       </select>

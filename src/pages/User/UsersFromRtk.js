@@ -39,7 +39,7 @@ function UsersFromRtk() {
           >
             <tr>
               <th>UserName</th>
-              <th>Email</th>
+              <th>Password</th>
               <th>Roles</th>
               <th>Edit</th>
             </tr>

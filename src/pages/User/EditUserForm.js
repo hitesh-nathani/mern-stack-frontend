@@ -17,7 +17,7 @@ function EditUserForm({ user }) {
   const navigate = useNavigate();
   const [userName, setUserName] = React.useState(user.userName);
   const [validUserName, setValidUserName] = React.useState(false);
-  const [password, setPassword] = React.useState("");
+  const [password, setPassword] = React.useState(user.password);
   const [validPassword, setValidPassword] = React.useState(false);
   const [roles, setRoles] = React.useState(user.roles);
   const [active, setActive] = React.useState(user.active);
@@ -96,26 +96,18 @@ function EditUserForm({ user }) {
     <>
       <p className={errClass}>{errContent}</p>
 
-      <form className="form" onSubmit={(e) => e.preventDefault()}>
+      <form
+        className="form"
+        onSubmit={(e) => e.preventDefault()}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: "500px",
+          alignItems: "flex-start",
+        }}
+      >
         <div className="form__title-row">
           <h2>Edit User</h2>
-          <div className="form__action-buttons">
-            <button
-              onClick={onSaveUserCliked}
-              className="icon-button"
-              title="Save"
-              // disabled={!canSave}
-            >
-              Save
-            </button>
-            <button
-              className="icon-button"
-              title="Delete"
-              onClick={onDeleteUserCliked}
-            >
-              Delete
-            </button>
-          </div>
         </div>
         <label className="form__label" htmlFor="userName">
           UserName: <span className="nowrap">[3-20 letters]</span>
@@ -169,6 +161,23 @@ function EditUserForm({ user }) {
           onChange={onActiveChanged}
         />
       </form>
+      <div className="form__action-buttons">
+        <button
+          onClick={onSaveUserCliked}
+          className="icon-button"
+          title="Save"
+          // disabled={!canSave}
+        >
+          Save
+        </button>
+        <button
+          className="icon-button"
+          title="Delete"
+          onClick={onDeleteUserCliked}
+        >
+          Delete
+        </button>
+      </div>
     </>
   );
 

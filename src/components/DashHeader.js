@@ -27,6 +27,7 @@ function DashHeader() {
           gap: "1rem",
         }}
       >
+        <Link to="/dash/users/new">Add User</Link>
         <Link to="/dash/users">Users</Link>
         <Link to="/dash/notes">Notes</Link>
       </div>

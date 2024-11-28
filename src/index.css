@@ -17,3 +17,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+input {
+  max-width: 350px !important;
+  /* width: 100%; */
+  height: 40px;
+  border-radius: 12px;
+  outline: transparent;
+  border: none;
+}
+
+input[type="checkbox"] {
+  width: "10%";
+}
