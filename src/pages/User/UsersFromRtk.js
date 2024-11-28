@@ -3,7 +3,14 @@ import { useGetUsersQuery } from "./usersApiSlice";
 import User from "./User";
 
 function UsersFromRtk() {
-  const { data, isLoading, isSuccess, isError, error } = useGetUsersQuery();
+  const { data, isLoading, isSuccess, isError, error } = useGetUsersQuery(
+    undefined,
+    {
+      pollingInterval: 60000,
+      refetchOnFocus: true,
+      refetchOnMountOrArgChange: true,
+    }
+  );
   console.log("🚀 ~ UserList ~ users:", data, isSuccess);
   let content;
 

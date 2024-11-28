@@ -14,7 +14,8 @@ function User({ userId }) {
 
     return (
       <tr className="table__row user">
-        <td>{user?.name}</td>
+        {/* <td>{user?.name}</td> */}
+        <td>{user?.userName}</td>
         <td>{user?.email}</td>
         <td>{userRolesString}</td>
         <td>

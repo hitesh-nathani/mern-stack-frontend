@@ -15,7 +15,7 @@ function EditUserForm({ user }) {
   const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/;
 
   const navigate = useNavigate();
-  const [userName, setUserName] = React.useState(user.name);
+  const [userName, setUserName] = React.useState(user.userName);
   const [validUserName, setValidUserName] = React.useState(false);
   const [password, setPassword] = React.useState("");
   const [validPassword, setValidPassword] = React.useState(false);
@@ -100,7 +100,12 @@ function EditUserForm({ user }) {
         <div className="form__title-row">
           <h2>Edit User</h2>
           <div className="form__action-buttons">
-            <button className="icon-button" title="Save" disabled={!canSave}>
+            <button
+              onClick={onSaveUserCliked}
+              className="icon-button"
+              title="Save"
+              // disabled={!canSave}
+            >
               Save
             </button>
             <button
